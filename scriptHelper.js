@@ -34,11 +34,30 @@ function validateInput(testInput) {
 // rest of if statement that checks that no inputs are empty
 //  || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty"
 
-function formSubmission(document, pilot) {
+function formSubmission(document, pilot, copilot, fuelLevel, cargoMass) {
     let form = document.querySelector("form");
-    if(validateInput(pilot) === "Empty"){
-        alert("Empty field!");
-    };
+    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty"){
+        alert("All fields required!");
+        return "alert sent";
+
+    } else if (validateInput(pilot) === "Is a Number"){
+        alert("Invalid Pilot name!");
+        return "alert sent";
+
+    } else if (validateInput(copilot) === "Is a Number"){
+        alert("Invalid Copilot name!");
+        return "alert sent";
+
+    } else if (validateInput(fuelLevel) === "Not a Number"){
+        alert("Fuel level must be a number!");
+        return "alert sent";
+
+    } else if (validateInput(cargoMass) === "Not a Number"){
+        alert("Cargo mass must be a number!");
+        return "alert sent";
+    }
+
+
 }
 
 async function myFetch() {
