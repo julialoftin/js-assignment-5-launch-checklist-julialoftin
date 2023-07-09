@@ -30,12 +30,6 @@ function validateInput(testInput) {
     }
 }
 
-// you will use validateInput() to complete the formSubmission() function. formSubmission() will take in a document 
-// parameter and strings representing the pilot, co-pilot, fuel level, and cargo mass.
-
-// rest of if statement that checks that no inputs are empty
-//  || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty"
-
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
 
     let pilotStatus = document.getElementById("pilotStatus");
@@ -46,11 +40,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
-        list.style.visibility = "hidden";
         alert("All fields required!");
 
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
-        list.style.visibility = "hidden";
         alert("Ensure all entries are valid!");
 
     } else {
